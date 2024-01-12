@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys  # Keysクラスのインポート
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
@@ -27,6 +28,9 @@ WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "user_id"
 # 要素の検索とテキストの入力
 text_box = driver.find_element(By.ID, "user_id")
 text_box.send_keys("y177649")
+
+# Enterキーを押す
+text_box.send_keys(Keys.ENTER)
 
 # スクリプトを終了する前に一定時間待つ（必要に応じて）
 time.sleep(86400)
