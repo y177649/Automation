@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# ステップ1：xdg-openでWebサイトを開く
-xdg-open "https://kenkoooo.com/atcoder/#/table/"
+# ステップ1：Seleniumスクリプトをバックグラウンドで実行
+python3 ~/code/Automation/OpenAtcoder_for_ubuntu/automation/browser_automation.py &
 
-# ステップ2：Seleniumスクリプトをバックグラウンドで実行
-python3 /path/to/project-root/automation/browser_automation.py &
-
-# ステップ3：ディレクトリに移動してVS Codeで開く
-code ~/code/Atcoder/nabc
+# ステップ2：gnome-terminalで指定ディレクトリを開く
+gnome-terminal --working-directory="$HOME/code/Atcoder/nabc"
