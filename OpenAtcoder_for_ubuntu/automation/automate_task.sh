@@ -23,3 +23,7 @@ browser_id=$(wmctrl -l | grep "AtCoder" | awk '{print $1}')
 
 # ブラウザウィンドウを左半分に配置し、縦も最大化
 wmctrl -i -r "$browser_id" -e 0,0,0,$half_screen_width,$screen_height
+
+# ユーザーの入力を待ってターミナルを閉じないようにする
+echo "Press any key to continue..."
+read -n 1 -s
